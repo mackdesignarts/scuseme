@@ -1,0 +1,27 @@
+{
+  "name": "scuseme_client",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "author": {
+    "name": "tmAck72",
+    "email": "tonymclaughlin72@gmail.com"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-add-src": "^0.2.0",
+    "gulp-angular-templatecache": "^1.8.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-concat-css": "^2.2.0",
+    "gulp-csso": "^1.0.0",
+    "gulp-jshint": "~1.11.2",
+    "gulp-minify-html": "^1.0.4",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.4.1",
+    "through2": "^2.0.0",
+    "yargs": "^3.26.0",
+    "del": "^2.0.2"
+  }
+}
