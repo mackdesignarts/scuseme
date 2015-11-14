@@ -26,6 +26,12 @@ Main widgets include:
 Add on widgets include calendar, links, threads, LBS. Create a customized thread, drag in content from file system or thru widgets. Push (scuse.me!) to subscribers, friends, and the community.
 
 -------------------------
+GRAPHICS
+-------------------------
+
+https://www.dropbox.com/home/scuseme
+
+-------------------------
 INSTALLATION
 -------------------------
 
