@@ -73,6 +73,23 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="public\app\app.js" />
+    <Content Include="public\app\catalog\views\catalog.html" />
+    <Content Include="public\app\common\controllers\mainController.js" />
+    <Content Include="public\app\common\views\main.html" />
+    <Content Include="public\app\footer\views\footer.html" />
+    <Content Include="public\app\header\views\header.html" />
+    <Content Include="public\assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="public\assets\fonts\intro.svg" />
+    <Content Include="public\assets\fonts\khmerui.svg" />
+    <Content Include="public\assets\fonts\khmeruib.svg" />
+    <Content Include="public\assets\fonts\lucon-webfont.svg" />
+    <Content Include="public\assets\fonts\PrestigeEliteStd-Bd.svg" />
+    <Content Include="public\assets\fonts\titillium-regular-webfont.svg" />
+    <Content Include="public\assets\fonts\titillium-semibold-webfont.svg" />
+    <Content Include="public\assets\fonts\verbblack-webfont.svg" />
+    <Content Include="public\assets\images\logo_mark_large.png" />
+    <Content Include="public\assets\images\logo_type_large.png" />
+    <Content Include="public\assets\style\app.css" />
     <Content Include="public\index.html" />
   </ItemGroup>
   <ItemGroup>
@@ -84,13 +101,49 @@
     <Folder Include="app\services\" />
     <Folder Include="public\app\article\" />
     <Folder Include="public\app\auth\" />
-    <Folder Include="public\app\catalog\" />
-    <Folder Include="public\app\common\" />
-    <Folder Include="public\app\footer\" />
-    <Folder Include="public\app\header\" />
-    <Folder Include="public\assets\fonts\" />
-    <Folder Include="public\assets\images\" />
-    <Folder Include="public\assets\style\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="public\assets\fonts\Aktiv.eot" />
+    <Content Include="public\assets\fonts\Aktiv.ttf" />
+    <Content Include="public\assets\fonts\Aktiv.woff" />
+    <Content Include="public\assets\fonts\Aktiv.woff2" />
+    <Content Include="public\assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="public\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="public\assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="public\assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="public\assets\fonts\FontAwesome.otf" />
+    <Content Include="public\assets\fonts\intro.eot" />
+    <Content Include="public\assets\fonts\intro.ttf" />
+    <Content Include="public\assets\fonts\intro.woff" />
+    <Content Include="public\assets\fonts\intro.woff2" />
+    <Content Include="public\assets\fonts\khmerui.eot" />
+    <Content Include="public\assets\fonts\khmerui.otf" />
+    <Content Include="public\assets\fonts\khmerui.ttf" />
+    <Content Include="public\assets\fonts\khmerui.woff" />
+    <Content Include="public\assets\fonts\khmeruib.eot" />
+    <Content Include="public\assets\fonts\khmeruib.otf" />
+    <Content Include="public\assets\fonts\khmeruib.ttf" />
+    <Content Include="public\assets\fonts\khmeruib.woff" />
+    <Content Include="public\assets\fonts\lucon-webfont.eot" />
+    <Content Include="public\assets\fonts\lucon-webfont.ttf" />
+    <Content Include="public\assets\fonts\lucon-webfont.woff" />
+    <Content Include="public\assets\fonts\lucon-webfont.woff2" />
+    <Content Include="public\assets\fonts\PrestigeEliteStd-Bd.eot" />
+    <Content Include="public\assets\fonts\PrestigeEliteStd-Bd.otf" />
+    <Content Include="public\assets\fonts\PrestigeEliteStd-Bd.ttf" />
+    <Content Include="public\assets\fonts\PrestigeEliteStd-Bd.woff" />
+    <Content Include="public\assets\fonts\titillium-regular-webfont.eot" />
+    <Content Include="public\assets\fonts\titillium-regular-webfont.ttf" />
+    <Content Include="public\assets\fonts\titillium-regular-webfont.woff" />
+    <Content Include="public\assets\fonts\titillium-regular-webfont.woff2" />
+    <Content Include="public\assets\fonts\titillium-semibold-webfont.eot" />
+    <Content Include="public\assets\fonts\titillium-semibold-webfont.ttf" />
+    <Content Include="public\assets\fonts\titillium-semibold-webfont.woff" />
+    <Content Include="public\assets\fonts\titillium-semibold-webfont.woff2" />
+    <Content Include="public\assets\fonts\verbblack-webfont.eot" />
+    <Content Include="public\assets\fonts\verbblack-webfont.ttf" />
+    <Content Include="public\assets\fonts\verbblack-webfont.woff" />
+    <Content Include="public\assets\fonts\verbblack-webfont.woff2" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

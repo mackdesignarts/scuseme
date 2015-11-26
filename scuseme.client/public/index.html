@@ -1,10 +1,30 @@
 ﻿<!DOCTYPE html>
-<html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" ng-app="scuseme">
+<!--<![endif]-->
 <head>
-    <title></title>
-	<meta charset="utf-8" />
+    <meta charset="utf-8" />
+    <title>SCUSE.ME</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet" />
+    <link href="/Content/style/vendor.css" rel="stylesheet" />
+    <link href="/Content/style/app.css" rel="stylesheet" />
+
+    <base href="/">
 </head>
-<body>
+<body ng-controller="mainController">
+
+    <!-- begin #page-container -->
+    <div id="page-container" class="fade">
+        <div ui-view></div>
+    </div>
+
+    <!-- scripts -->
+    <script src="/Content/js/vendor.js"></script>
+    <script src="/Content/js/app.js"></script>
 
 </body>
 </html>
