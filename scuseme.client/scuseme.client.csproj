@@ -90,6 +90,7 @@
     <Content Include="public\assets\images\logo_mark_large.png" />
     <Content Include="public\assets\images\logo_type_large.png" />
     <Content Include="public\assets\style\app.css" />
+    <Content Include="public\assets\style\fonts.css" />
     <Content Include="public\index.html" />
   </ItemGroup>
   <ItemGroup>
