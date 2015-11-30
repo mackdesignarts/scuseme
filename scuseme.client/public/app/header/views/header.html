@@ -1,1 +1,30 @@
-﻿header
+﻿<div ng-controller="headerController as vm">
+    <!-- Fixed navbar -->
+    <nav id="header" class="navbar navbar-fixed-top" nav-scroll-lock>
+        <div id="header-container" class="container-full navbar-container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a id="brand" class="navbar-brand" href="#">
+                    <div class="inline">
+                        <img src="Content/images/logo_mark_large.png" class="header-logomark" alt="" title="" />
+                    </div>
+                    <div class="inline">
+                        <img src="Content/images/logo_type.png" class="header-logotype" alt="" title="" />
+                    </div>
+                </a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div><!-- /.nav-collapse -->
+        </div><!-- /.container -->
+    </nav><!-- /.navbar -->
+</div>

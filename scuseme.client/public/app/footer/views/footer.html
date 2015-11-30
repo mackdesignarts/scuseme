@@ -1,1 +1,7 @@
-﻿footer
+﻿<div ng-controller="footerController as vm" class="footer">
+    <hr />
+    <ul class="inline">
+        <li>© {{vm.year}} Scuse Me</li>
+        <li ng-repeat="item in vm.footerMenu"> <a ui-sref="{{item.state}}" href="#">{{item.item}}</a> </li>
+    </ul>
+</div>

@@ -2,29 +2,29 @@
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if !IE]><!-->
 <html lang="en" ng-app="scuseme">
-<!--<![endif]-->
-<head>
-    <meta charset="utf-8" />
-    <title>SCUSE.ME</title>
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
-
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet" />
-    <link href="/Content/style/vendor.css" rel="stylesheet" />
-    <link href="/Content/style/app.css" rel="stylesheet" />
-
-    <base href="/">
-</head>
-<body ng-controller="mainController">
-
-    <!-- begin #page-container -->
-    <div id="page-container" class="fade">
-        <div ui-view></div>
-    </div>
-
-    <!-- scripts -->
-    <script src="/Content/js/vendor.js"></script>
-    <script src="/Content/js/app.js"></script>
-
-</body>
+    <!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <title>Scuse Me Internet</title>
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+        <link rel="icon" href="/Content/images/favicon.ico" />
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet" />
+        <link href="/Content/style/vendor.css" rel="stylesheet" />
+        <link href="/Content/style/app.css" rel="stylesheet" />
+        <base href="/">
+    </head>
+    <body ng-controller="mainController">
+        <!-- header -->
+        <header>
+            <div ui-view="header"></div>
+        </header>
+        <!-- content -->
+        <div ui-view="container"></div>
+        <!-- footer -->
+        <footer id="footer" ui-view="footer"></footer>
+        <!-- scripts -->
+        <script src="/Content/js/vendor.js"></script>
+        <script src="/Content/js/app.js"></script>
+    </body>
 </html>

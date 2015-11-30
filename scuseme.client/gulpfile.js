@@ -103,7 +103,7 @@ gulp.task('copyIndex', function () {
 });
 
 gulp.task('copyHtml', function () {
-    return gulp.src(paths.src + '/app/**/*.html')
+    return gulp.src([paths.src + '/app/**/*.html', '!' + paths.src + '/index.html'])
     .pipe(gulp.dest(paths.dest));
 });
 

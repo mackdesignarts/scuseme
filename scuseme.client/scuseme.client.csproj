@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{16458B2E-F64D-4820-836D-3704BF0DD53C}</ProjectGuid>
+    <ProjectGuid>{AD6562B9-2962-4D9F-966A-77F3B5004633}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -66,10 +66,57 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\models\JavaScript.js" />
+    <Content Include="app\routes\JavaScript.js" />
+    <Content Include="app\services\JavaScript.js" />
     <Content Include="gulpfile.js" />
     <Content Include="packages.config" />
+    <Content Include="public\app\catalog\controllers\catalogController.js" />
+    <Content Include="public\app\footer\controller\footerController.js" />
+    <Content Include="public\app\header\controllers\headerController.js" />
+    <Content Include="public\app\header\directives\navScrollLockDirective.js" />
+    <Content Include="public\assets\fonts\Aktiv.eot" />
+    <Content Include="public\assets\fonts\Aktiv.ttf" />
+    <Content Include="public\assets\fonts\Aktiv.woff" />
+    <Content Include="public\assets\fonts\Aktiv.woff2" />
+    <Content Include="public\assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="public\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="public\assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="public\assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="public\assets\fonts\FontAwesome.otf" />
+    <Content Include="public\assets\fonts\intro.eot" />
+    <Content Include="public\assets\fonts\intro.ttf" />
+    <Content Include="public\assets\fonts\intro.woff" />
+    <Content Include="public\assets\fonts\intro.woff2" />
+    <Content Include="public\assets\fonts\khmerui.eot" />
+    <Content Include="public\assets\fonts\khmerui.otf" />
+    <Content Include="public\assets\fonts\khmerui.ttf" />
+    <Content Include="public\assets\fonts\khmerui.woff" />
+    <Content Include="public\assets\fonts\khmeruib.eot" />
+    <Content Include="public\assets\fonts\khmeruib.otf" />
+    <Content Include="public\assets\fonts\KhmerUIb.ttf" />
+    <Content Include="public\assets\fonts\khmeruib.woff" />
+    <Content Include="public\assets\fonts\lucon-webfont.eot" />
+    <Content Include="public\assets\fonts\lucon-webfont.ttf" />
+    <Content Include="public\assets\fonts\lucon-webfont.woff" />
+    <Content Include="public\assets\fonts\lucon-webfont.woff2" />
+    <Content Include="public\assets\fonts\PrestigeEliteStd-Bd.eot" />
+    <Content Include="public\assets\fonts\PrestigeEliteStd-Bd.otf" />
+    <Content Include="public\assets\fonts\PrestigeEliteStd-Bd.ttf" />
+    <Content Include="public\assets\fonts\PrestigeEliteStd-Bd.woff" />
+    <Content Include="public\assets\fonts\titillium-regular-webfont.eot" />
+    <Content Include="public\assets\fonts\titillium-regular-webfont.ttf" />
+    <Content Include="public\assets\fonts\titillium-regular-webfont.woff" />
+    <Content Include="public\assets\fonts\titillium-regular-webfont.woff2" />
+    <Content Include="public\assets\fonts\titillium-semibold-webfont.eot" />
+    <Content Include="public\assets\fonts\titillium-semibold-webfont.ttf" />
+    <Content Include="public\assets\fonts\titillium-semibold-webfont.woff" />
+    <Content Include="public\assets\fonts\titillium-semibold-webfont.woff2" />
+    <Content Include="public\assets\fonts\verbblack-webfont.eot" />
+    <Content Include="public\assets\fonts\verbblack-webfont.ttf" />
+    <Content Include="public\assets\fonts\verbblack-webfont.woff" />
+    <Content Include="public\assets\fonts\verbblack-webfont.woff2" />
     <Content Include="bower.json" />
-    <Content Include="package.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="public\app\app.js" />
@@ -97,54 +144,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\models\" />
-    <Folder Include="app\routes\" />
-    <Folder Include="app\services\" />
-    <Folder Include="public\app\article\" />
-    <Folder Include="public\app\auth\" />
+    <Content Include="package.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="public\assets\fonts\Aktiv.eot" />
-    <Content Include="public\assets\fonts\Aktiv.ttf" />
-    <Content Include="public\assets\fonts\Aktiv.woff" />
-    <Content Include="public\assets\fonts\Aktiv.woff2" />
-    <Content Include="public\assets\fonts\fontawesome-webfont.eot" />
-    <Content Include="public\assets\fonts\fontawesome-webfont.ttf" />
-    <Content Include="public\assets\fonts\fontawesome-webfont.woff" />
-    <Content Include="public\assets\fonts\fontawesome-webfont.woff2" />
-    <Content Include="public\assets\fonts\FontAwesome.otf" />
-    <Content Include="public\assets\fonts\intro.eot" />
-    <Content Include="public\assets\fonts\intro.ttf" />
-    <Content Include="public\assets\fonts\intro.woff" />
-    <Content Include="public\assets\fonts\intro.woff2" />
-    <Content Include="public\assets\fonts\khmerui.eot" />
-    <Content Include="public\assets\fonts\khmerui.otf" />
-    <Content Include="public\assets\fonts\khmerui.ttf" />
-    <Content Include="public\assets\fonts\khmerui.woff" />
-    <Content Include="public\assets\fonts\khmeruib.eot" />
-    <Content Include="public\assets\fonts\khmeruib.otf" />
-    <Content Include="public\assets\fonts\khmeruib.ttf" />
-    <Content Include="public\assets\fonts\khmeruib.woff" />
-    <Content Include="public\assets\fonts\lucon-webfont.eot" />
-    <Content Include="public\assets\fonts\lucon-webfont.ttf" />
-    <Content Include="public\assets\fonts\lucon-webfont.woff" />
-    <Content Include="public\assets\fonts\lucon-webfont.woff2" />
-    <Content Include="public\assets\fonts\PrestigeEliteStd-Bd.eot" />
-    <Content Include="public\assets\fonts\PrestigeEliteStd-Bd.otf" />
-    <Content Include="public\assets\fonts\PrestigeEliteStd-Bd.ttf" />
-    <Content Include="public\assets\fonts\PrestigeEliteStd-Bd.woff" />
-    <Content Include="public\assets\fonts\titillium-regular-webfont.eot" />
-    <Content Include="public\assets\fonts\titillium-regular-webfont.ttf" />
-    <Content Include="public\assets\fonts\titillium-regular-webfont.woff" />
-    <Content Include="public\assets\fonts\titillium-regular-webfont.woff2" />
-    <Content Include="public\assets\fonts\titillium-semibold-webfont.eot" />
-    <Content Include="public\assets\fonts\titillium-semibold-webfont.ttf" />
-    <Content Include="public\assets\fonts\titillium-semibold-webfont.woff" />
-    <Content Include="public\assets\fonts\titillium-semibold-webfont.woff2" />
-    <Content Include="public\assets\fonts\verbblack-webfont.eot" />
-    <Content Include="public\assets\fonts\verbblack-webfont.ttf" />
-    <Content Include="public\assets\fonts\verbblack-webfont.woff" />
-    <Content Include="public\assets\fonts\verbblack-webfont.woff2" />
+    <Folder Include="public\app\article\" />
+    <Folder Include="public\app\auth\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -159,9 +163,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>18220</DevelopmentServerPort>
+          <DevelopmentServerPort>31184</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:18220/</IISUrl>
+          <IISUrl>http://localhost:31184/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

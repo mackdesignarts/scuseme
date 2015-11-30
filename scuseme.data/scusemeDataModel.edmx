@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="scusemeDataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="scusemeDataModelStoreContainer">
+    <EntitySet Name="Users" EntityType="scusemeDataModel.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Communities" EntityType="scusemeDataModel.Store.Communities" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Threads" EntityType="scusemeDataModel.Store.Threads" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Admins" EntityType="scusemeDataModel.Store.Admins" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="CommunityThreads" Association="scusemeDataModel.Store.CommunityThreads">
+      <End Role="Community" EntitySet="Communities" />
+      <End Role="Thread" EntitySet="Threads" />
+    </AssociationSet>
+    <AssociationSet Name="CommunityUser" Association="scusemeDataModel.Store.CommunityUser">
+      <End Role="Community" EntitySet="Communities" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="CommunityAdmin" Association="scusemeDataModel.Store.CommunityAdmin">
+      <End Role="Community" EntitySet="Communities" />
+      <End Role="Admin" EntitySet="Admins" />
+    </AssociationSet>
+    <AssociationSet Name="ThreadUser" Association="scusemeDataModel.Store.ThreadUser">
+      <End Role="Thread" EntitySet="Threads" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DateCreated" Type="datetime" Nullable="true" />
+    <Property Name="CommunityCommunityId" Type="int" Nullable="true" />
+    <Property Name="ThreadThreadId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Communities">
+    <Key>
+      <PropertyRef Name="CommunityId" />
+    </Key>
+    <Property Name="CommunityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Tags" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="OperatorType" Type="tinyint" Nullable="true" />
+    <Property Name="Owner" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Admin_AdminId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Threads">
+    <Key>
+      <PropertyRef Name="ThreadId" />
+    </Key>
+    <Property Name="ThreadId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DateCreated" Type="datetime" Nullable="true" />
+    <Property Name="CommunityCommunityId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Admins">
+    <Key>
+      <PropertyRef Name="AdminId" />
+    </Key>
+    <Property Name="AdminId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Log" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Type" Type="tinyint" Nullable="false" />
+    <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="CommunityThreads">
+    <End Role="Community" Type="scusemeDataModel.Store.Communities" Multiplicity="0..1" />
+    <End Role="Thread" Type="scusemeDataModel.Store.Threads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Community">
+        <PropertyRef Name="CommunityId" />
+      </Principal>
+      <Dependent Role="Thread">
+        <PropertyRef Name="CommunityCommunityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CommunityUser">
+    <End Role="Community" Type="scusemeDataModel.Store.Communities" Multiplicity="0..1" />
+    <End Role="User" Type="scusemeDataModel.Store.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Community">
+        <PropertyRef Name="CommunityId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="CommunityCommunityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CommunityAdmin">
+    <End Role="Community" Type="scusemeDataModel.Store.Communities" Multiplicity="*" />
+    <End Role="Admin" Type="scusemeDataModel.Store.Admins" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Admin">
+        <PropertyRef Name="AdminId" />
+      </Principal>
+      <Dependent Role="Community">
+        <PropertyRef Name="Admin_AdminId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ThreadUser">
+    <End Role="Thread" Type="scusemeDataModel.Store.Threads" Multiplicity="0..1" />
+    <End Role="User" Type="scusemeDataModel.Store.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Thread">
+        <PropertyRef Name="ThreadId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="ThreadThreadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="scusemeDataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="scusemeDataModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Users" EntityType="scusemeDataModel.User" />
+          <EntitySet Name="Communities" EntityType="scusemeDataModel.Community" />
+          <EntitySet Name="Threads" EntityType="scusemeDataModel.Thread" />
+          <EntitySet Name="Admins" EntityType="scusemeDataModel.Admin" />
+          <AssociationSet Name="CommunityThreads" Association="scusemeDataModel.CommunityThreads">
+            <End Role="Community" EntitySet="Communities" />
+            <End Role="Thread" EntitySet="Threads" />
+          </AssociationSet>
+          <AssociationSet Name="CommunityUser" Association="scusemeDataModel.CommunityUser">
+            <End Role="Community" EntitySet="Communities" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="CommunityAdmin" Association="scusemeDataModel.CommunityAdmin">
+            <End Role="Community" EntitySet="Communities" />
+            <End Role="Admin" EntitySet="Admins" />
+          </AssociationSet>
+          <AssociationSet Name="ThreadUser" Association="scusemeDataModel.ThreadUser">
+            <End Role="Thread" EntitySet="Threads" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="true" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="Community" Relationship="scusemeDataModel.CommunityUser" FromRole="User" ToRole="Community" />
+          <Property Name="CommunityCommunityId" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="Thread" Relationship="scusemeDataModel.ThreadUser" FromRole="User" ToRole="Thread" />
+          <Property Name="ThreadThreadId" Type="Int32" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Community">
+          <Key>
+            <PropertyRef Name="CommunityId" />
+          </Key>
+          <Property Name="CommunityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="true" />
+          <Property Name="Tags" Type="String" Nullable="true" />
+          <Property Name="OperatorType" Type="Byte" Nullable="true" />
+          <Property Name="Owner" Type="String" Nullable="true" />
+          <NavigationProperty Name="Threads" Relationship="scusemeDataModel.CommunityThreads" FromRole="Community" ToRole="Thread" />
+          <NavigationProperty Name="Users" Relationship="scusemeDataModel.CommunityUser" FromRole="Community" ToRole="User" />
+          <NavigationProperty Name="Admin" Relationship="scusemeDataModel.CommunityAdmin" FromRole="Community" ToRole="Admin" />
+          <Property Name="Description" Type="String" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Thread">
+          <Key>
+            <PropertyRef Name="ThreadId" />
+          </Key>
+          <Property Name="ThreadId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="true" />
+          <Property Name="Content" Type="String" Nullable="true" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="Community" Relationship="scusemeDataModel.CommunityThreads" FromRole="Thread" ToRole="Community" />
+          <Property Name="CommunityCommunityId" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="Users" Relationship="scusemeDataModel.ThreadUser" FromRole="Thread" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="AdminId" />
+          </Key>
+          <Property Name="AdminId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Password" Type="String" Nullable="false" />
+          <Property Name="Log" Type="String" Nullable="true" />
+          <Property Name="Type" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="Communities" Relationship="scusemeDataModel.CommunityAdmin" FromRole="Admin" ToRole="Community" />
+          <Property Name="Username" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="CommunityThreads">
+          <End Type="scusemeDataModel.Community" Role="Community" Multiplicity="0..1" />
+          <End Type="scusemeDataModel.Thread" Role="Thread" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Community">
+              <PropertyRef Name="CommunityId" />
+            </Principal>
+            <Dependent Role="Thread">
+              <PropertyRef Name="CommunityCommunityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CommunityUser">
+          <End Type="scusemeDataModel.Community" Role="Community" Multiplicity="0..1" />
+          <End Type="scusemeDataModel.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Community">
+              <PropertyRef Name="CommunityId" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="CommunityCommunityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CommunityAdmin">
+          <End Type="scusemeDataModel.Community" Role="Community" Multiplicity="*" />
+          <End Type="scusemeDataModel.Admin" Role="Admin" Multiplicity="0..1" />
+        </Association>
+        <Association Name="ThreadUser">
+          <End Type="scusemeDataModel.Thread" Role="Thread" Multiplicity="0..1" />
+          <End Type="scusemeDataModel.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Thread">
+              <PropertyRef Name="ThreadId" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="ThreadThreadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="scusemeDataModelStoreContainer" CdmEntityContainer="scusemeDataModelContainer">
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(scusemeDataModel.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CommunityCommunityId" ColumnName="CommunityCommunityId" />
+          <ScalarProperty Name="ThreadThreadId" ColumnName="ThreadThreadId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Communities">
+      <EntityTypeMapping TypeName="IsTypeOf(scusemeDataModel.Community)">
+        <MappingFragment StoreEntitySet="Communities">
+          <ScalarProperty Name="CommunityId" ColumnName="CommunityId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Tags" ColumnName="Tags" />
+          <ScalarProperty Name="OperatorType" ColumnName="OperatorType" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Threads">
+      <EntityTypeMapping TypeName="IsTypeOf(scusemeDataModel.Thread)">
+        <MappingFragment StoreEntitySet="Threads">
+          <ScalarProperty Name="ThreadId" ColumnName="ThreadId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CommunityCommunityId" ColumnName="CommunityCommunityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="IsTypeOf(scusemeDataModel.Admin)">
+        <MappingFragment StoreEntitySet="Admins">
+          <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Log" ColumnName="Log" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="CommunityAdmin" TypeName="scusemeDataModel.CommunityAdmin" StoreEntitySet="Communities">
+      <EndProperty Name="Admin">
+        <ScalarProperty Name="AdminId" ColumnName="Admin_AdminId" />
+      </EndProperty>
+      <EndProperty Name="Community">
+        <ScalarProperty Name="CommunityId" ColumnName="CommunityId" />
+      </EndProperty>
+      <Condition ColumnName="Admin_AdminId" IsNull="false" />
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="946f0c8b546b4aea804944a0d0c9bd52" Name="Diagram1">
+        <EntityTypeShape EntityType="scusemeDataModel.User" Width="1.5" PointX="5.25" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="scusemeDataModel.Community" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="scusemeDataModel.Thread" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="scusemeDataModel.Admin" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <AssociationConnector Association="scusemeDataModel.CommunityThreads" ManuallyRouted="false" />
+        <AssociationConnector Association="scusemeDataModel.CommunityUser" ManuallyRouted="false" />
+        <AssociationConnector Association="scusemeDataModel.CommunityAdmin" ManuallyRouted="false" />
+        <AssociationConnector Association="scusemeDataModel.ThreadUser" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

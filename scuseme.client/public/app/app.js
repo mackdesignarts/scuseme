@@ -13,15 +13,34 @@ var scuseme = angular.module('scuseme', [
 scuseme.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
 
     $stateProvider
+
         .state('main', {
-            url: '/',
-            templateUrl: '/Content/common/views/main.html',
-            abstract: true
+            url: '',
+            abstract: true,
+            views: {
+                'header': {
+                    templateUrl: 'Content/header/views/header.html'
+                },
+                'footer': {
+                    templateUrl: 'Content/footer/views/footer.html'
+                }
+            }
         })
         .state('main.catalog', {
-            url: '/main',
-            templateUrl: '/Content/catalog/views/catalog.html',
-            controller: 'mainController'
+            url: '/',
+            views: {
+                'container@': {
+                    templateUrl: 'Content/catalog/views/catalog.html'
+                }
+            }
+        })
+        .state('main.activity', {
+            url: '/activity',
+            views: {
+                'container@': {
+                    templateUrl: 'Content/article/views/article.html'
+                }
+            }
         });
 
     $urlRouterProvider.otherwise('/');
