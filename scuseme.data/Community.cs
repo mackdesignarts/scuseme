@@ -20,7 +20,12 @@ namespace scuseme.data
             this.Threads = new HashSet<Thread>();
             this.Users = new HashSet<User>();
         }
-    
+
+        public object ToList()
+        {
+            throw new NotImplementedException();
+        }
+
         public int CommunityId { get; set; }
         public string Title { get; set; }
         public string Tags { get; set; }

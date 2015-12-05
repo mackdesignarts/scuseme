@@ -71,14 +71,19 @@
     <Content Include="app\services\JavaScript.js" />
     <Content Include="gulpfile.js" />
     <Content Include="packages.config" />
+    <Content Include="public\app\article\controllers\articleController.js" />
+    <Content Include="public\app\article\views\article.html" />
     <Content Include="public\app\catalog\controllers\catalogController.js" />
+    <Content Include="public\app\common\services\communitiesFactory.js" />
     <Content Include="public\app\footer\controller\footerController.js" />
     <Content Include="public\app\header\controllers\headerController.js" />
+    <Content Include="public\app\header\directives\megaMenuDirective.js" />
     <Content Include="public\app\header\directives\navScrollLockDirective.js" />
     <Content Include="public\assets\fonts\Aktiv.eot" />
     <Content Include="public\assets\fonts\Aktiv.ttf" />
     <Content Include="public\assets\fonts\Aktiv.woff" />
     <Content Include="public\assets\fonts\Aktiv.woff2" />
+    <Content Include="public\assets\fonts\Avenir-Medium.svg" />
     <Content Include="public\assets\fonts\fontawesome-webfont.eot" />
     <Content Include="public\assets\fonts\fontawesome-webfont.ttf" />
     <Content Include="public\assets\fonts\fontawesome-webfont.woff" />
@@ -134,7 +139,10 @@
     <Content Include="public\assets\fonts\titillium-regular-webfont.svg" />
     <Content Include="public\assets\fonts\titillium-semibold-webfont.svg" />
     <Content Include="public\assets\fonts\verbblack-webfont.svg" />
+    <Content Include="public\assets\images\favicon.ico" />
+    <Content Include="public\assets\images\logo_mark_head.png" />
     <Content Include="public\assets\images\logo_mark_large.png" />
+    <Content Include="public\assets\images\logo_type.png" />
     <Content Include="public\assets\images\logo_type_large.png" />
     <Content Include="public\assets\style\app.css" />
     <Content Include="public\assets\style\fonts.css" />
@@ -147,8 +155,12 @@
     <Content Include="package.json" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="public\app\article\" />
     <Folder Include="public\app\auth\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="public\assets\fonts\Avenir-Medium.eot" />
+    <Content Include="public\assets\fonts\Avenir-Medium.ttf" />
+    <Content Include="public\assets\fonts\Avenir-Medium.woff" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

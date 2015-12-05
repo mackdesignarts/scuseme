@@ -24,7 +24,12 @@ namespace scuseme.data
         {
             throw new UnintentionalCodeFirstException();
         }
-    
+
+        public object Query<T>(string v)
+        {
+            throw new NotImplementedException();
+        }
+
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Community> Communities { get; set; }
         public virtual DbSet<Thread> Threads { get; set; }

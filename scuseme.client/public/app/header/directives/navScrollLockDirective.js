@@ -18,6 +18,10 @@ scuseme.directive('navScrollLock', function () {
                         for (var i = 0; i < this.elements.length; i++) {
                             document.getElementById(this.elements[i]).className += " fixed-theme";
                         }
+                        $("#logoMark").attr('src', 'Content/images/logo_mark_head.png');
+                        $(".header-logomark").css({ height: '40px' });
+                        $(".header-logotype").css({ height: '26px' });
+                        $(".navbar-nav").css({ margin: '0' });
                         this.flagAdd = false;
                     }
                 },
@@ -26,6 +30,10 @@ scuseme.directive('navScrollLock', function () {
                         document.getElementById(this.elements[i]).className =
                                 document.getElementById(this.elements[i]).className.replace(/(?:^|\s)fixed-theme(?!\S)/g, '');
                     }
+                    $("#logoMark").attr('src', 'Content/images/logo_mark_large.png');
+                    $(".header-logomark").css({ height: '100px' });
+                    $(".header-logotype").css({ height: '36px' });
+                    $(".navbar-nav").css({ margin: '30px 0 0 0' });
                     this.flagAdd = true;
                 }
             };
