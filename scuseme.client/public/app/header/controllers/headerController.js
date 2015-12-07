@@ -7,19 +7,22 @@ scuseme.controller('headerController', ['$scope', '$q', '$rootScope', '$state', 
     var vm = this;
     vm.title = "Scuse.Me!";
 
-    var communities = communitiesFactory.get()
-        .success(function (data) {
-            console.log(data);
-            return (data);
-            
-        })
-        .error(function(err){
-            // error handler
-        });
-    
+    vm.communities = [];
 
-    function MyCtrl($scope) {
-        $scope.items = m;
+    var init = function () {
+        communitiesFactory.get()
+            .success(function (data) {
+                var arr = [];
+                for (var i = 0; i < data.length; i++) {
+                    arr.push({title: data[i].Title});
+                }
+                vm.communities = arr;
+            })
+            .error(function (err) {
+                // error handler
+            });
     }
+    
+    init();
 
 }]);

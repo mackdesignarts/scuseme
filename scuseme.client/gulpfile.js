@@ -49,14 +49,14 @@ var vendorCss = [
 ];
 
 var vendorJs = [
-    paths.bower + '/jquery/jquery.js',
-    paths.bower + '/jquery-ui/jquery-ui.js',
-    paths.bower + '/angular/angular.js',
-    paths.bower + '/angular-cookies/angular-cookies.js',
-    paths.bower + '/angular-ui-router/release/angular-ui-router.js',
-    paths.bower + '/angular-bootstrap/ui-bootstrap-tpls.js',
-    paths.bower + '/bootstrap/dist/js/bootstrap.js',
-    paths.bower + '/toastr/toastr.js'
+    paths.bower + '/jquery/jquery.min.js',
+    paths.bower + '/jquery-ui/jquery-ui.min.js',
+    paths.bower + '/angular/angular.min.js',
+    paths.bower + '/angular-cookies/angular-cookies.min.js',
+    paths.bower + '/angular-ui-router/release/angular-ui-router.min.js',
+    paths.bower + '/angular-bootstrap/ui-bootstrap-tpls.min.js',
+    paths.bower + '/bootstrap/dist/js/bootstrap.min.js',
+    paths.bower + '/toastr/toastr.min.js'
 ];
 
 // Tasks
