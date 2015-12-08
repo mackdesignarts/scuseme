@@ -1,4 +1,4 @@
-﻿/** 
+/** 
  * scuseme gulp 
  * @summary Target directory -> /build
  */
@@ -78,7 +78,6 @@ gulp.task('concatVendorStyle', function () {
 gulp.task('concatScripts', function () {
     return gulp.src([paths.src + '/app/**/*.js', '!' + paths.src + '/app/app.js'])
 	.pipe(addSrc.prepend(paths.src + '/app/app.js'))
-	.pipe(addSrc.append(paths.src + '/app/init.js'))
     .pipe(concat("app.js"))
 	//.pipe(uglify())
     .pipe(gulp.dest(paths.dest + '/js'));
